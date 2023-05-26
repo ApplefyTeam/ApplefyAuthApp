@@ -11,6 +11,24 @@
 		BC1B5BA22A1F8FA2008F5FD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B5BA12A1F8FA2008F5FD4 /* ContentView.swift */; };
 		BC1B5BA42A1F8FA3008F5FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1B5BA32A1F8FA3008F5FD4 /* Assets.xcassets */; };
 		BC1B5BA82A1F8FA3008F5FD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1B5BA72A1F8FA3008F5FD4 /* Preview Assets.xcassets */; };
+		BCA1CCBD2A1F902A00E7D606 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCBC2A1F902A00E7D606 /* Keychain.swift */; };
+		BCA1CCC02A1F904B00E7D606 /* PersistentToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCBF2A1F904B00E7D606 /* PersistentToken.swift */; };
+		BCA1CCC22A1F906500E7D606 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCC12A1F906500E7D606 /* Token.swift */; };
+		BCA1CCC42A1F908F00E7D606 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCC32A1F908F00E7D606 /* Generator.swift */; };
+		BCA1CCC72A1F90D200E7D606 /* Token+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCC62A1F90D200E7D606 /* Token+URL.swift */; };
+		BCA1CCCE2A1F91D600E7D606 /* Base32 in Frameworks */ = {isa = PBXBuildFile; productRef = BCA1CCCD2A1F91D600E7D606 /* Base32 */; };
+		BCA1CCD12A1F92C500E7D606 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCD02A1F92C500E7D606 /* TokenStore.swift */; };
+		BCA1CCD32A1F92D500E7D606 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCD22A1F92D500E7D606 /* Settings.swift */; };
+		BCA1CCD72A1FACC400E7D606 /* ListOfTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCD62A1FACC400E7D606 /* ListOfTokens.swift */; };
+		BCA1CCD92A1FADB100E7D606 /* AddTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCD82A1FADB100E7D606 /* AddTokenView.swift */; };
+		BCA1CCDB2A1FAF2900E7D606 /* ScanTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCDA2A1FAF2900E7D606 /* ScanTokenView.swift */; };
+		BCA1CCDE2A1FB15300E7D606 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCDD2A1FB15300E7D606 /* CameraManager.swift */; };
+		BCA1CCE02A1FB35200E7D606 /* FrameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCDF2A1FB35200E7D606 /* FrameManager.swift */; };
+		BCA1CCE32A1FB3A400E7D606 /* ScanTokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCE22A1FB3A400E7D606 /* ScanTokenViewModel.swift */; };
+		BCA1CCE62A1FB72000E7D606 /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCE52A1FB72000E7D606 /* CGImage+Extension.swift */; };
+		BCA1CCE82A1FB7C400E7D606 /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCE72A1FB7C400E7D606 /* CameraError.swift */; };
+		BCA1CCEA2A1FBAB400E7D606 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCE92A1FBAB400E7D606 /* QRScanner.swift */; };
+		BCA1CCEF2A1FCBB900E7D606 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA1CCEE2A1FCBB900E7D606 /* AppManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +38,23 @@
 		BC1B5BA32A1F8FA3008F5FD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC1B5BA52A1F8FA3008F5FD4 /* ApplefyAuthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ApplefyAuthApp.entitlements; sourceTree = "<group>"; };
 		BC1B5BA72A1F8FA3008F5FD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCA1CCBC2A1F902A00E7D606 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		BCA1CCBF2A1F904B00E7D606 /* PersistentToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentToken.swift; sourceTree = "<group>"; };
+		BCA1CCC12A1F906500E7D606 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		BCA1CCC32A1F908F00E7D606 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		BCA1CCC62A1F90D200E7D606 /* Token+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+URL.swift"; sourceTree = "<group>"; };
+		BCA1CCD02A1F92C500E7D606 /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
+		BCA1CCD22A1F92D500E7D606 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		BCA1CCD62A1FACC400E7D606 /* ListOfTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfTokens.swift; sourceTree = "<group>"; };
+		BCA1CCD82A1FADB100E7D606 /* AddTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTokenView.swift; sourceTree = "<group>"; };
+		BCA1CCDA2A1FAF2900E7D606 /* ScanTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTokenView.swift; sourceTree = "<group>"; };
+		BCA1CCDD2A1FB15300E7D606 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		BCA1CCDF2A1FB35200E7D606 /* FrameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameManager.swift; sourceTree = "<group>"; };
+		BCA1CCE22A1FB3A400E7D606 /* ScanTokenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTokenViewModel.swift; sourceTree = "<group>"; };
+		BCA1CCE52A1FB72000E7D606 /* CGImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
+		BCA1CCE72A1FB7C400E7D606 /* CameraError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
+		BCA1CCE92A1FBAB400E7D606 /* QRScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanner.swift; sourceTree = "<group>"; };
+		BCA1CCEE2A1FCBB900E7D606 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA1CCCE2A1F91D600E7D606 /* Base32 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +88,9 @@
 		BC1B5B9E2A1F8FA2008F5FD4 /* ApplefyAuthApp */ = {
 			isa = PBXGroup;
 			children = (
-				BC1B5B9F2A1F8FA2008F5FD4 /* ApplefyAuthAppApp.swift */,
-				BC1B5BA12A1F8FA2008F5FD4 /* ContentView.swift */,
+				BCA1CCEB2A1FC9FE00E7D606 /* Source */,
+				BCA1CCE42A1FB71400E7D606 /* Extensions */,
+				BCA1CCD42A1FACA200E7D606 /* UI */,
 				BC1B5BA32A1F8FA3008F5FD4 /* Assets.xcassets */,
 				BC1B5BA52A1F8FA3008F5FD4 /* ApplefyAuthApp.entitlements */,
 				BC1B5BA62A1F8FA3008F5FD4 /* Preview Content */,
@@ -67,6 +104,102 @@
 				BC1B5BA72A1F8FA3008F5FD4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCA1CCBB2A1F900900E7D606 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCCF2A1F92BA00E7D606 /* Data store */,
+				BCA1CCC52A1F909C00E7D606 /* Source */,
+				BCA1CCBC2A1F902A00E7D606 /* Keychain.swift */,
+				BCA1CCBF2A1F904B00E7D606 /* PersistentToken.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		BCA1CCC52A1F909C00E7D606 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCC82A1F90D900E7D606 /* Extensions */,
+				BCA1CCC32A1F908F00E7D606 /* Generator.swift */,
+				BCA1CCC12A1F906500E7D606 /* Token.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BCA1CCC82A1F90D900E7D606 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCC62A1F90D200E7D606 /* Token+URL.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BCA1CCCF2A1F92BA00E7D606 /* Data store */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCD02A1F92C500E7D606 /* TokenStore.swift */,
+				BCA1CCD22A1F92D500E7D606 /* Settings.swift */,
+			);
+			path = "Data store";
+			sourceTree = "<group>";
+		};
+		BCA1CCD42A1FACA200E7D606 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCE12A1FB39400E7D606 /* AddNewToken */,
+				BCA1CCD52A1FACB500E7D606 /* List */,
+				BC1B5B9F2A1F8FA2008F5FD4 /* ApplefyAuthAppApp.swift */,
+				BC1B5BA12A1F8FA2008F5FD4 /* ContentView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BCA1CCD52A1FACB500E7D606 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCD62A1FACC400E7D606 /* ListOfTokens.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		BCA1CCDC2A1FB14500E7D606 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCDD2A1FB15300E7D606 /* CameraManager.swift */,
+				BCA1CCDF2A1FB35200E7D606 /* FrameManager.swift */,
+				BCA1CCE72A1FB7C400E7D606 /* CameraError.swift */,
+				BCA1CCE92A1FBAB400E7D606 /* QRScanner.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		BCA1CCE12A1FB39400E7D606 /* AddNewToken */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCDA2A1FAF2900E7D606 /* ScanTokenView.swift */,
+				BCA1CCD82A1FADB100E7D606 /* AddTokenView.swift */,
+				BCA1CCE22A1FB3A400E7D606 /* ScanTokenViewModel.swift */,
+			);
+			path = AddNewToken;
+			sourceTree = "<group>";
+		};
+		BCA1CCE42A1FB71400E7D606 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCE52A1FB72000E7D606 /* CGImage+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BCA1CCEB2A1FC9FE00E7D606 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCBB2A1F900900E7D606 /* Storage */,
+				BCA1CCDC2A1FB14500E7D606 /* Camera */,
+				BCA1CCEE2A1FCBB900E7D606 /* AppManager.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +218,9 @@
 			dependencies = (
 			);
 			name = ApplefyAuthApp;
+			packageProductDependencies = (
+				BCA1CCCD2A1F91D600E7D606 /* Base32 */,
+			);
 			productName = ApplefyAuthApp;
 			productReference = BC1B5B9C2A1F8FA2008F5FD4 /* ApplefyAuthApp.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +249,9 @@
 				Base,
 			);
 			mainGroup = BC1B5B932A1F8FA2008F5FD4;
+			packageReferences = (
+				BCA1CCCC2A1F91D600E7D606 /* XCRemoteSwiftPackageReference "Base32" */,
+			);
 			productRefGroup = BC1B5B9D2A1F8FA2008F5FD4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +278,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA1CCE82A1FB7C400E7D606 /* CameraError.swift in Sources */,
+				BCA1CCD92A1FADB100E7D606 /* AddTokenView.swift in Sources */,
+				BCA1CCDE2A1FB15300E7D606 /* CameraManager.swift in Sources */,
 				BC1B5BA22A1F8FA2008F5FD4 /* ContentView.swift in Sources */,
+				BCA1CCD12A1F92C500E7D606 /* TokenStore.swift in Sources */,
+				BCA1CCC22A1F906500E7D606 /* Token.swift in Sources */,
+				BCA1CCE02A1FB35200E7D606 /* FrameManager.swift in Sources */,
 				BC1B5BA02A1F8FA2008F5FD4 /* ApplefyAuthAppApp.swift in Sources */,
+				BCA1CCE62A1FB72000E7D606 /* CGImage+Extension.swift in Sources */,
+				BCA1CCEA2A1FBAB400E7D606 /* QRScanner.swift in Sources */,
+				BCA1CCC72A1F90D200E7D606 /* Token+URL.swift in Sources */,
+				BCA1CCC42A1F908F00E7D606 /* Generator.swift in Sources */,
+				BCA1CCDB2A1FAF2900E7D606 /* ScanTokenView.swift in Sources */,
+				BCA1CCD72A1FACC400E7D606 /* ListOfTokens.swift in Sources */,
+				BCA1CCEF2A1FCBB900E7D606 /* AppManager.swift in Sources */,
+				BCA1CCD32A1F92D500E7D606 /* Settings.swift in Sources */,
+				BCA1CCC02A1F904B00E7D606 /* PersistentToken.swift in Sources */,
+				BCA1CCE32A1FB3A400E7D606 /* ScanTokenViewModel.swift in Sources */,
+				BCA1CCBD2A1F902A00E7D606 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,10 +421,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ApplefyAuthApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 9WW9Z623Y6;
+				DEVELOPMENT_TEAM = 3E8WWLT8HN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to camera to scan token";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -284,7 +441,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = den4iklvivua.ApplefyAuthApp;
+				PRODUCT_BUNDLE_IDENTIFIER = applefy.ApplefyAuthApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -303,10 +460,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ApplefyAuthApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 9WW9Z623Y6;
+				DEVELOPMENT_TEAM = 3E8WWLT8HN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to camera to scan token";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -322,7 +480,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = den4iklvivua.ApplefyAuthApp;
+				PRODUCT_BUNDLE_IDENTIFIER = applefy.ApplefyAuthApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -354,6 +512,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BCA1CCCC2A1F91D600E7D606 /* XCRemoteSwiftPackageReference "Base32" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/norio-nomura/Base32";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BCA1CCCD2A1F91D600E7D606 /* Base32 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCA1CCCC2A1F91D600E7D606 /* XCRemoteSwiftPackageReference "Base32" */;
+			productName = Base32;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BC1B5B942A1F8FA2008F5FD4 /* Project object */;
 }
