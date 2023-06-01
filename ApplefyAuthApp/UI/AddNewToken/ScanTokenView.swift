@@ -8,10 +8,13 @@
 import SwiftUI
 #if os(iOS)
 import UIKit
+#else
+import AppKit
+#endif
 
 struct ScanTokenView: View {
     @StateObject private var model = ScanTokenViewModel()
-    
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         ZStack {
@@ -20,11 +23,18 @@ struct ScanTokenView: View {
             
             CameraErrorView(error: model.error)
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading, content: {
+                NavBackButton(dismiss: self.dismiss)
+            })
+        }
     }
 }
 
 struct FrameView: View {
     var image: CGImage?
+    var error: Error?
     private let label = Text("Scan Token View")
     
     var body: some View {
@@ -70,6 +80,3 @@ struct ScanTokenView_Previews: PreviewProvider {
         ScanTokenView()
     }
 }
-#else
-import AppKit
-#endif

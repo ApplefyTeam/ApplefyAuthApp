@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TokenStore {
+protocol TokenStoreProtocol {
     var persistentTokens: [PersistentToken] { get }
 
     func addToken(_ token: Token) throws
@@ -17,10 +17,10 @@ protocol TokenStore {
     func deletePersistentToken(_ persistentToken: PersistentToken) throws
 }
 
-class KeychainTokenStore: TokenStore {
+class KeychainTokenStore: TokenStoreProtocol {
     private let keychain: Keychain
     private let userDefaults: UserDefaults
-    private(set) var persistentTokens: [PersistentToken]
+    @Published private(set) var persistentTokens: [PersistentToken]
 
     // Throws an error if the initial state could not be loaded from the keychain.
     init(keychain: Keychain, userDefaults: UserDefaults) throws {

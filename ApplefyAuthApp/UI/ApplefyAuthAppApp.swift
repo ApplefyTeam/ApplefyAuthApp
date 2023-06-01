@@ -11,7 +11,9 @@ import SwiftUI
 struct ApplefyAuthAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ScanTokenView()
+            NavigationStack {
+                ListOfTokensView()
+            }
         }
     }
 }

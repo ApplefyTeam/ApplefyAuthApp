@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct AddTokenView: View {
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
             Text("New Token")
         }
-            .navigationTitle("Add new Token")
+        .navigationTitle("Add new Token")
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading, content: {
+                NavBackButton(dismiss: self.dismiss)
+            })
+        }
     }
 }
 

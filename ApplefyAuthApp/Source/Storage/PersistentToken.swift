@@ -11,6 +11,7 @@ import Foundation
 /// saved `token` a unique `identifier` which can be used to recover the token from the keychain at
 /// a later time.
 public struct PersistentToken: Equatable, Hashable {
+    
     /// A `Token` stored in the keychain.
     public let token: Token
     /// The keychain's persistent identifier for the saved token.
