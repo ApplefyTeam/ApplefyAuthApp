@@ -27,9 +27,15 @@ class ScanTokenViewModel: ObservableObject {
     func setupSubscriptions() {
         appManager.frameManager.$current
             .receive(on: RunLoop.main)
-            .compactMap { buffer in
-                let image = CGImage.create(from: buffer)
-                return image
+            .compactMap { [weak self] buffer in
+                let cgImage = CGImage.create(from: buffer)
+                if let self, self.isScanning, let cgImage {
+                    let uiImage = UIImage(cgImage: cgImage)
+                    if let text = self.detectQRCode(uiImage) {
+                        self.handleDecodedText(text)
+                    }
+                }
+                return cgImage
             }
             .assign(to: &$frame)
         
@@ -58,6 +64,7 @@ class ScanTokenViewModel: ObservableObject {
         guard isScanning else {
             return
         }
+        isScanning = false
         print("handleDecodedText \(text)")
         let now = Date()
         if now.timeIntervalSince(lastScanTime) > minimumScanInterval {
@@ -67,17 +74,21 @@ class ScanTokenViewModel: ObservableObject {
                 // Show an error message
                 tokenFound = false
                 scannedToken = nil
+                isScanning = true
                 return
             }
             do {
                 try appManager.store.addToken(token)
                 scannedToken = token
                 tokenFound = true
+                isScanning = true
                 print("handleDecodedText success \(token.name)")
                 return
             } catch {
-                scannedToken = token
-                tokenFound = true
+                scannedToken = nil
+                tokenFound = false
+                print("handleDecodedText error \(error)")
+                isScanning = true
                 return
             }
         }

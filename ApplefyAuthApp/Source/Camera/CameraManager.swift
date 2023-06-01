@@ -62,6 +62,7 @@ class CameraManager: ObservableObject {
         case .restricted:
             status = .unauthorized
             set(error: .restrictedAuthorization)
+            
         case .denied:
             status = .unauthorized
             set(error: .deniedAuthorization)
@@ -86,7 +87,7 @@ class CameraManager: ObservableObject {
         let device = AVCaptureDevice.default(
             .builtInWideAngleCamera,
             for: .video,
-            position: .front)
+            position: .back)
         guard let camera = device else {
             set(error: .cameraUnavailable)
             status = .failed

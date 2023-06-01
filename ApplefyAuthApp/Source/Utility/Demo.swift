@@ -10,11 +10,11 @@ import UIKit
 
 extension CommandLine {
     static var isDemo: Bool {
-#if DEBUG
+#if targetEnvironment(simulator)
+        return true
+#elseif DEBUG
         return arguments.contains("--demo")
             || UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT")
-#elseif TARGET_IPHONE_SIMULATOR
-        return true
 #else
         return false
 #endif

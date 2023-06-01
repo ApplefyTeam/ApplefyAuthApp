@@ -11,6 +11,7 @@
 		BC1B5BA22A1F8FA2008F5FD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B5BA12A1F8FA2008F5FD4 /* ContentView.swift */; };
 		BC1B5BA42A1F8FA3008F5FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1B5BA32A1F8FA3008F5FD4 /* Assets.xcassets */; };
 		BC1B5BA82A1F8FA3008F5FD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1B5BA72A1F8FA3008F5FD4 /* Preview Assets.xcassets */; };
+		BC6538FE2A28F8030009BDE0 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6538FD2A28F8030009BDE0 /* AccountView.swift */; };
 		BC9F4D272A265D4700B71A90 /* qr_code_example.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9F4D262A265D4700B71A90 /* qr_code_example.png */; };
 		BC9F4D2A2A28A92900B71A90 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F4D292A28A92900B71A90 /* Demo.swift */; };
 		BC9F4D2F2A28A9A900B71A90 /* DisplayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F4D2E2A28A9A900B71A90 /* DisplayTime.swift */; };
@@ -43,6 +44,7 @@
 		BC1B5BA32A1F8FA3008F5FD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC1B5BA52A1F8FA3008F5FD4 /* ApplefyAuthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ApplefyAuthApp.entitlements; sourceTree = "<group>"; };
 		BC1B5BA72A1F8FA3008F5FD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BC6538FD2A28F8030009BDE0 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		BC9F4D262A265D4700B71A90 /* qr_code_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr_code_example.png; sourceTree = "<group>"; };
 		BC9F4D292A28A92900B71A90 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		BC9F4D2E2A28A9A900B71A90 /* DisplayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTime.swift; sourceTree = "<group>"; };
@@ -117,6 +119,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BC6538FC2A28F2E20009BDE0 /* ScanToken */ = {
+			isa = PBXGroup;
+			children = (
+				BCA1CCDA2A1FAF2900E7D606 /* ScanTokenView.swift */,
+				BCA1CCE22A1FB3A400E7D606 /* ScanTokenViewModel.swift */,
+			);
+			path = ScanToken;
+			sourceTree = "<group>";
+		};
 		BC9F4D252A265D0A00B71A90 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +194,7 @@
 		BCA1CCD42A1FACA200E7D606 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BC6538FC2A28F2E20009BDE0 /* ScanToken */,
 				BC9F4D322A28B90E00B71A90 /* Buttons */,
 				BCA1CCE12A1FB39400E7D606 /* AddNewToken */,
 				BCA1CCD52A1FACB500E7D606 /* ListOfTokens */,
@@ -196,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				BCA1CCD62A1FACC400E7D606 /* ListOfTokensView.swift */,
+				BC6538FD2A28F8030009BDE0 /* AccountView.swift */,
 			);
 			path = ListOfTokens;
 			sourceTree = "<group>";
@@ -214,9 +227,7 @@
 		BCA1CCE12A1FB39400E7D606 /* AddNewToken */ = {
 			isa = PBXGroup;
 			children = (
-				BCA1CCDA2A1FAF2900E7D606 /* ScanTokenView.swift */,
 				BCA1CCD82A1FADB100E7D606 /* AddTokenView.swift */,
-				BCA1CCE22A1FB3A400E7D606 /* ScanTokenViewModel.swift */,
 			);
 			path = AddNewToken;
 			sourceTree = "<group>";
@@ -330,6 +341,7 @@
 				BC1B5BA02A1F8FA2008F5FD4 /* ApplefyAuthAppApp.swift in Sources */,
 				BCA1CCE62A1FB72000E7D606 /* CGImage+Extension.swift in Sources */,
 				BCA1CCEA2A1FBAB400E7D606 /* QRScanner.swift in Sources */,
+				BC6538FE2A28F8030009BDE0 /* AccountView.swift in Sources */,
 				BCA1CCC72A1F90D200E7D606 /* Token+URL.swift in Sources */,
 				BCA1CCC42A1F908F00E7D606 /* Generator.swift in Sources */,
 				BCA1CCDB2A1FAF2900E7D606 /* ScanTokenView.swift in Sources */,
@@ -480,6 +492,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -519,6 +532,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

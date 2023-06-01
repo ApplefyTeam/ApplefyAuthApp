@@ -11,25 +11,26 @@ struct ListOfTokensView: View {
     @State var isLoading: Bool = false
     
     @State var tokens: [PersistentToken] = []
-    @State var isScanning: Bool = false
     @State var isManualAdding: Bool = false
     
-    init() {
-        refresh()
-    }
+    @State var isCopied: Bool = false
     
     var body: some View {
-        ZStack {
-            content
-            
-            if tokens.isEmpty {
-                withAnimation {
-                    Text("No tokens!")
-                }
-            }
-            
+        VStack {
             if isLoading {
                 ProgressView()
+                    .bold()
+                
+            } else if tokens.isEmpty {
+                withAnimation {
+                    VStack {
+                        Text("No tokens!")
+                            .font(.title)
+                            .padding()
+                    }
+                }
+            } else {
+                content
             }
         }
         .toolbar {
@@ -46,35 +47,43 @@ struct ListOfTokensView: View {
                         .tint(.black)
                 })
                 
-//                Spacer(minLength: 25)
-                
-                Button(action: {
-                    isScanning.toggle()
+                NavigationLink(destination: {
+                    ScanTokenView()
                 }, label: {
-                    Image(systemName: "camera.circle.fill")
+                    Image(systemName: "camera")
                         .tint(.black)
                 })
             }
         }
-        .navigationDestination(isPresented: $isScanning, destination: {
-            ScanTokenView()
-        })
         .navigationDestination(isPresented: $isManualAdding, destination: {
             AddTokenView()
         })
         .navigationTitle("Accounts List")
         .navigationBarTitleDisplayMode(.inline)
         .padding()
-        .refreshable {
+        .onAppear {
             refresh()
         }
+        .alert(isPresented: $isCopied) {
+                    Alert(title: Text("Code copied!"),
+                          message: Text("You can now paste and use it."),
+                          dismissButton: .default(Text("OK")))
+                }
     }
     
     var content: some View {
         VStack {
-            ForEach(tokens, id: \.identifier) { token in
-                Text("Token \(token.token.name)")
+            List {
+                ForEach(tokens, id: \.identifier) { token in
+                    AccountView(token: token)
+                        .onTapGesture {
+                            UIPasteboard.general.string = token.token.currentPassword
+                            isCopied = true
+                        }
+                }
+                .onDelete(perform: deleteItem)
             }
+            .cornerRadius(20)
         }
     }
     
@@ -83,6 +92,15 @@ struct ListOfTokensView: View {
         withAnimation {
             self.tokens = AppManager.shared.store.persistentTokens
             isLoading = false
+        }
+    }
+    
+    private func deleteItem(at offsets: IndexSet) {
+        let itemsToDelete = offsets.map { tokens[$0] }
+        print(itemsToDelete)
+        itemsToDelete.forEach {
+            try? AppManager.shared.store.deletePersistentToken($0)
+            refresh()
         }
     }
 }
