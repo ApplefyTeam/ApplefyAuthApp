@@ -40,9 +40,12 @@ struct ScanTokenView: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
+            #if os(macOS)
+            #else
             ToolbarItem(placement: .navigationBarLeading, content: {
                 NavBackButton(dismiss: self.dismiss)
             })
+            #endif
         }
         .onAppear() {
             model.isScanning = true

@@ -58,9 +58,8 @@ struct ListOfTokensView: View {
         .navigationDestination(isPresented: $isManualAdding, destination: {
             AddTokenView()
         })
-        .navigationTitle("Accounts List")
-        .navigationBarTitleDisplayMode(.inline)
         .padding()
+        .navigationTitle("Accounts List")
         .onAppear {
             refresh()
         }
@@ -69,17 +68,31 @@ struct ListOfTokensView: View {
                           message: Text("You can now paste and use it."),
                           dismissButton: .default(Text("OK")))
                 }
+        #if os(macOS)
+        #else
+        .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
     
     var content: some View {
         VStack {
             List {
                 ForEach(tokens, id: \.identifier) { token in
-                    AccountView(token: token)
-                        .onTapGesture {
-                            UIPasteboard.general.string = token.token.currentPassword
-                            isCopied = true
-                        }
+                    Button(action: {
+                        guard let password = token.token.currentPassword else { return }
+                        #if os(macOS)
+                        NSPasteboard.general.setString(password, forType: .string)
+                        #else
+                        UIPasteboard.general.string = password
+                        #endif
+                        isCopied = true
+                    }, label: { AccountView(token: token) })
+                    .buttonStyle(ListButtonStyle())
+//                    AccountView(token: token)
+//                        .onTapGesture {
+//                            UIPasteboard.general.string = token.token.currentPassword
+//                            isCopied = true
+//                        }
                 }
                 .onDelete(perform: deleteItem)
             }
@@ -108,5 +121,12 @@ struct ListOfTokensView: View {
 struct ListOfTokens_Previews: PreviewProvider {
     static var previews: some View {
         ListOfTokensView()
+    }
+}
+
+struct ListButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.85 : 1.0)
     }
 }

@@ -8,7 +8,12 @@
 import AVFoundation
 import CoreImage
 import Combine
+#if os(macOS)
+import AppKit
+import Cocoa
+#else
 import UIKit
+#endif
 
 class ScanTokenViewModel: ObservableObject {
     
@@ -30,7 +35,7 @@ class ScanTokenViewModel: ObservableObject {
             .compactMap { [weak self] buffer in
                 let cgImage = CGImage.create(from: buffer)
                 if let self, self.isScanning, let cgImage {
-                    let uiImage = UIImage(cgImage: cgImage)
+                    let uiImage = UIImage(cgImage: cgImage, size: NSSize(width: 1000, height: 1000))
                     if let text = self.detectQRCode(uiImage) {
                         self.handleDecodedText(text)
                     }
@@ -95,6 +100,9 @@ class ScanTokenViewModel: ObservableObject {
     }
     
     func detectQRCode(_ image: UIImage) -> String? {
+        #if os(macOS)
+        return nil
+        #else
         var result: String? = nil
         if let ciImage = CIImage.init(image: image) {
             var options: [String: Any]
@@ -115,5 +123,6 @@ class ScanTokenViewModel: ObservableObject {
         } else {
             return result
         }
+        #endif
     }
 }

@@ -11,6 +11,7 @@
 		BC1B5BA22A1F8FA2008F5FD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B5BA12A1F8FA2008F5FD4 /* ContentView.swift */; };
 		BC1B5BA42A1F8FA3008F5FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1B5BA32A1F8FA3008F5FD4 /* Assets.xcassets */; };
 		BC1B5BA82A1F8FA3008F5FD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1B5BA72A1F8FA3008F5FD4 /* Preview Assets.xcassets */; };
+		BC4E8DC42A29E47400630DE6 /* NSImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DC32A29E47400630DE6 /* NSImage+Extension.swift */; };
 		BC6538FE2A28F8030009BDE0 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6538FD2A28F8030009BDE0 /* AccountView.swift */; };
 		BC9F4D272A265D4700B71A90 /* qr_code_example.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9F4D262A265D4700B71A90 /* qr_code_example.png */; };
 		BC9F4D2A2A28A92900B71A90 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F4D292A28A92900B71A90 /* Demo.swift */; };
@@ -44,6 +45,7 @@
 		BC1B5BA32A1F8FA3008F5FD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC1B5BA52A1F8FA3008F5FD4 /* ApplefyAuthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ApplefyAuthApp.entitlements; sourceTree = "<group>"; };
 		BC1B5BA72A1F8FA3008F5FD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BC4E8DC32A29E47400630DE6 /* NSImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extension.swift"; sourceTree = "<group>"; };
 		BC6538FD2A28F8030009BDE0 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		BC9F4D262A265D4700B71A90 /* qr_code_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr_code_example.png; sourceTree = "<group>"; };
 		BC9F4D292A28A92900B71A90 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			children = (
 				BCA1CCE52A1FB72000E7D606 /* CGImage+Extension.swift */,
 				BC9F4D592A28CF8800B71A90 /* View+Extension.swift */,
+				BC4E8DC32A29E47400630DE6 /* NSImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				BC1B5BA02A1F8FA2008F5FD4 /* ApplefyAuthAppApp.swift in Sources */,
 				BCA1CCE62A1FB72000E7D606 /* CGImage+Extension.swift in Sources */,
 				BCA1CCEA2A1FBAB400E7D606 /* QRScanner.swift in Sources */,
+				BC4E8DC42A29E47400630DE6 /* NSImage+Extension.swift in Sources */,
 				BC6538FE2A28F8030009BDE0 /* AccountView.swift in Sources */,
 				BCA1CCC72A1F90D200E7D606 /* Token+URL.swift in Sources */,
 				BCA1CCC42A1F908F00E7D606 /* Generator.swift in Sources */,
