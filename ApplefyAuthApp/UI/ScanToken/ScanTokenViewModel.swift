@@ -37,7 +37,8 @@ class ScanTokenViewModel: ObservableObject {
                 let cgImage = CGImage.create(from: buffer)
                 if let self, self.isScanning, let cgImage {
                     #if os(macOS)
-                    let uiImage = UIImage(cgImage: cgImage, size: NSSize(width: 1000, height: 1000))
+                    let uiImage = UIImage(cgImage: cgImage,
+                                          size: .zero)
                     #else
                     let uiImage = UIImage(cgImage: cgImage)
                     #endif
@@ -52,6 +53,7 @@ class ScanTokenViewModel: ObservableObject {
         appManager.cameraManager.$error
             .receive(on: RunLoop.main)
             .map { [weak self] error in
+                #if targetEnvironment(simulator)
                 if let self, let _ = error {
                     if let image = UIImage.demoScannerImage() {
                         self.frame = image.cgImage
@@ -60,6 +62,7 @@ class ScanTokenViewModel: ObservableObject {
                         }
                     }
                 }
+                #endif
                 return error
             }
             .assign(to: &$error)
