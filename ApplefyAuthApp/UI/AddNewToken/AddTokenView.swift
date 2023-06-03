@@ -19,6 +19,7 @@ struct AddTokenView: View {
         .navigationBarBackButtonHidden(true)
         .toolbar {
             #if os(macOS)
+            NavBackButton(dismiss: self.dismiss)
             #else
             ToolbarItem(placement: .navigationBarLeading, content: {
                 NavBackButton(dismiss: self.dismiss)

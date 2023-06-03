@@ -58,6 +58,7 @@ class KeychainTokenStore: TokenStoreProtocol {
 extension KeychainTokenStore {
     // MARK: Actions
 
+    @MainActor
     func addToken(_ token: Token) throws {
         let newPersistentToken = try keychain.add(token)
         persistentTokens.append(newPersistentToken)

@@ -233,7 +233,8 @@ private func allKeychainItems() throws -> [NSDictionary] {
         return []
     }
     guard resultCode == errSecSuccess else {
-        throw Keychain.Error.systemError(resultCode)
+        return []
+//        throw Keychain.Error.systemError(resultCode)
     }
     guard let keychainItems = result as? [NSDictionary] else {
         throw Keychain.Error.incorrectReturnType

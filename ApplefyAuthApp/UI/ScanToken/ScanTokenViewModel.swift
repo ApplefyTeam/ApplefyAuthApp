@@ -15,6 +15,7 @@ import Cocoa
 import UIKit
 #endif
 
+@MainActor
 class ScanTokenViewModel: ObservableObject {
     
     @Published var frame: CGImage?
@@ -74,7 +75,6 @@ class ScanTokenViewModel: ObservableObject {
             return
         }
         isScanning = false
-        print("handleDecodedText \(text)")
         let now = Date()
         if now.timeIntervalSince(lastScanTime) > minimumScanInterval {
             lastScanTime = now
@@ -91,12 +91,10 @@ class ScanTokenViewModel: ObservableObject {
                 scannedToken = token
                 tokenFound = true
                 isScanning = true
-                print("handleDecodedText success \(token.name)")
                 return
             } catch {
                 scannedToken = nil
                 tokenFound = false
-                print("handleDecodedText error \(error)")
                 isScanning = true
                 return
             }
@@ -104,29 +102,27 @@ class ScanTokenViewModel: ObservableObject {
     }
     
     func detectQRCode(_ image: UIImage) -> String? {
-        #if os(macOS)
-        return nil
-        #else
         var result: String? = nil
-        if let ciImage = CIImage.init(image: image) {
-            var options: [String: Any]
-            let context = CIContext()
-            options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
-            let qrDetector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: options)
-            if ciImage.properties.keys.contains((kCGImagePropertyOrientation as String)){
-                options = [CIDetectorImageOrientation: ciImage.properties[(kCGImagePropertyOrientation as String)] ?? 1]
-            } else {
-                options = [CIDetectorImageOrientation: 1]
-            }
-            if let features = qrDetector?.features(in: ciImage, options: options) {
-                for case let row as CIQRCodeFeature in features {
-                    result = row.messageString
-                }
-            }
-            return result
-        } else {
-            return result
-        }
+        #if os(iOS)
+        guard let ciImage = CIImage.init(image: image) else { return result }
+        #else
+        guard let cgImage = image.cgImage else { return result }
+        let ciImage = CIImage(cgImage: cgImage)
         #endif
+        var options: [String: Any]
+        let context = CIContext()
+        options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+        let qrDetector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: options)
+        if ciImage.properties.keys.contains((kCGImagePropertyOrientation as String)){
+            options = [CIDetectorImageOrientation: ciImage.properties[(kCGImagePropertyOrientation as String)] ?? 1]
+        } else {
+            options = [CIDetectorImageOrientation: 1]
+        }
+        if let features = qrDetector?.features(in: ciImage, options: options) {
+            for case let row as CIQRCodeFeature in features {
+                result = row.messageString
+            }
+        }
+        return result
     }
 }

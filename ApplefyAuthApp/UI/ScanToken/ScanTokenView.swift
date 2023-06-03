@@ -25,6 +25,7 @@ struct ScanTokenView: View {
                         .padding()
                     
                     Button(action: {
+                        NotificationCenter.default.post(name: .refreshApplefyTokens, object: nil)
                         dismiss()
                     }, label: {
                         Text("OK!").bold()
@@ -41,6 +42,7 @@ struct ScanTokenView: View {
         .navigationBarBackButtonHidden(true)
         .toolbar {
             #if os(macOS)
+            NavBackButton(dismiss: self.dismiss)
             #else
             ToolbarItem(placement: .navigationBarLeading, content: {
                 NavBackButton(dismiss: self.dismiss)

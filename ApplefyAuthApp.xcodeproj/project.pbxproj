@@ -14,6 +14,7 @@
 		BC4E8DC42A29E47400630DE6 /* NSImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DC32A29E47400630DE6 /* NSImage+Extension.swift */; };
 		BC4E8DC62A2B862800630DE6 /* AddTokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DC52A2B862800630DE6 /* AddTokenViewModel.swift */; };
 		BC4E8DC92A2B87FA00630DE6 /* ListOfTokensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DC82A2B87FA00630DE6 /* ListOfTokensViewModel.swift */; };
+		BC4E8DCB2A2B8EEC00630DE6 /* NSNotifications+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DCA2A2B8EEC00630DE6 /* NSNotifications+Extension.swift */; };
 		BC6538FE2A28F8030009BDE0 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6538FD2A28F8030009BDE0 /* AccountView.swift */; };
 		BC9F4D272A265D4700B71A90 /* qr_code_example.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9F4D262A265D4700B71A90 /* qr_code_example.png */; };
 		BC9F4D2A2A28A92900B71A90 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F4D292A28A92900B71A90 /* Demo.swift */; };
@@ -50,6 +51,7 @@
 		BC4E8DC32A29E47400630DE6 /* NSImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extension.swift"; sourceTree = "<group>"; };
 		BC4E8DC52A2B862800630DE6 /* AddTokenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTokenViewModel.swift; sourceTree = "<group>"; };
 		BC4E8DC82A2B87FA00630DE6 /* ListOfTokensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfTokensViewModel.swift; sourceTree = "<group>"; };
+		BC4E8DCA2A2B8EEC00630DE6 /* NSNotifications+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotifications+Extension.swift"; sourceTree = "<group>"; };
 		BC6538FD2A28F8030009BDE0 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		BC9F4D262A265D4700B71A90 /* qr_code_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr_code_example.png; sourceTree = "<group>"; };
 		BC9F4D292A28A92900B71A90 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
@@ -107,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				BC9F4D252A265D0A00B71A90 /* Resources */,
-				BCA1CCEB2A1FC9FE00E7D606 /* Source */,
+				BCA1CCEB2A1FC9FE00E7D606 /* Services */,
 				BCA1CCE42A1FB71400E7D606 /* Extensions */,
 				BCA1CCD42A1FACA200E7D606 /* UI */,
 				BC1B5BA32A1F8FA3008F5FD4 /* Assets.xcassets */,
@@ -246,11 +248,12 @@
 				BCA1CCE52A1FB72000E7D606 /* CGImage+Extension.swift */,
 				BC9F4D592A28CF8800B71A90 /* View+Extension.swift */,
 				BC4E8DC32A29E47400630DE6 /* NSImage+Extension.swift */,
+				BC4E8DCA2A2B8EEC00630DE6 /* NSNotifications+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BCA1CCEB2A1FC9FE00E7D606 /* Source */ = {
+		BCA1CCEB2A1FC9FE00E7D606 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				BC9F4D282A28A92100B71A90 /* Utility */,
@@ -258,7 +261,7 @@
 				BCA1CCDC2A1FB14500E7D606 /* Camera */,
 				BCA1CCEE2A1FCBB900E7D606 /* AppManager.swift */,
 			);
-			path = Source;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +362,7 @@
 				BCA1CCD72A1FACC400E7D606 /* ListOfTokensView.swift in Sources */,
 				BCA1CCEF2A1FCBB900E7D606 /* AppManager.swift in Sources */,
 				BCA1CCD32A1F92D500E7D606 /* Settings.swift in Sources */,
+				BC4E8DCB2A2B8EEC00630DE6 /* NSNotifications+Extension.swift in Sources */,
 				BC9F4D312A28B7BD00B71A90 /* NavBackButton.swift in Sources */,
 				BCA1CCC02A1F904B00E7D606 /* PersistentToken.swift in Sources */,
 				BCA1CCE32A1FB3A400E7D606 /* ScanTokenViewModel.swift in Sources */,

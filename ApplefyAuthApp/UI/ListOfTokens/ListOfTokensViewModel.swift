@@ -17,7 +17,18 @@ class ListOfTokensViewModel: ObservableObject {
     
     @Published var isCopied: Bool = false
     
+    init() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(refresh),
+                                               name: .refreshApplefyTokens,
+                                               object: nil)
+    }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc
     func refresh() {
         isLoading = true
         withAnimation {
@@ -28,7 +39,6 @@ class ListOfTokensViewModel: ObservableObject {
     
     func deleteItem(at offsets: IndexSet) {
         let itemsToDelete = offsets.map { tokens[$0] }
-        print(itemsToDelete)
         itemsToDelete.forEach {
             try? AppManager.shared.store.deletePersistentToken($0)
             refresh()
