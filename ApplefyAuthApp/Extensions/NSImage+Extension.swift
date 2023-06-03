@@ -5,6 +5,7 @@
 //  Created by Denys on 02.06.2023.
 //
 
+#if os(macOS)
 import Cocoa
 
 // Step 1: Typealias UIImage to NSImage
@@ -24,3 +25,5 @@ extension NSImage {
         self.init(named: Name(name))
     }
 }
+#else
+#endif

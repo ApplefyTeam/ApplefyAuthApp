@@ -8,20 +8,15 @@
 import SwiftUI
 
 struct ListOfTokensView: View {
-    @State var isLoading: Bool = false
-    
-    @State var tokens: [PersistentToken] = []
-    @State var isManualAdding: Bool = false
-    
-    @State var isCopied: Bool = false
+    @StateObject var viewModel: ListOfTokensViewModel = ListOfTokensViewModel()
     
     var body: some View {
         VStack {
-            if isLoading {
+            if viewModel.isLoading {
                 ProgressView()
                     .bold()
                 
-            } else if tokens.isEmpty {
+            } else if viewModel.tokens.isEmpty {
                 withAnimation {
                     VStack {
                         Text("No tokens!")
@@ -35,13 +30,13 @@ struct ListOfTokensView: View {
         }
         .toolbar {
             HStack {
-                Button(action: refresh, label: {
+                Button(action: viewModel.refresh, label: {
                     Image(systemName: "arrow.clockwise")
                         .tint(.black)
                 })
                 
                 Button(action: {
-                    isManualAdding.toggle()
+                    viewModel.isManualAdding.toggle()
                 }, label: {
                     Image(systemName: "plus")
                         .tint(.black)
@@ -55,29 +50,26 @@ struct ListOfTokensView: View {
                 })
             }
         }
-        .navigationDestination(isPresented: $isManualAdding, destination: {
+        .navigationDestination(isPresented: $viewModel.isManualAdding, destination: {
             AddTokenView()
         })
         .padding()
         .navigationTitle("Accounts List")
         .onAppear {
-            refresh()
+            viewModel.refresh()
         }
-        .alert(isPresented: $isCopied) {
+        .alert(isPresented: $viewModel.isCopied) {
                     Alert(title: Text("Code copied!"),
                           message: Text("You can now paste and use it."),
                           dismissButton: .default(Text("OK")))
                 }
-        #if os(macOS)
-        #else
-        .navigationBarTitleDisplayMode(.inline)
-        #endif
+        .navigationBarInline()
     }
     
     var content: some View {
         VStack {
             List {
-                ForEach(tokens, id: \.identifier) { token in
+                ForEach(viewModel.tokens, id: \.identifier) { token in
                     Button(action: {
                         guard let password = token.token.currentPassword else { return }
                         #if os(macOS)
@@ -85,35 +77,13 @@ struct ListOfTokensView: View {
                         #else
                         UIPasteboard.general.string = password
                         #endif
-                        isCopied = true
+                        viewModel.isCopied = true
                     }, label: { AccountView(token: token) })
                     .buttonStyle(ListButtonStyle())
-//                    AccountView(token: token)
-//                        .onTapGesture {
-//                            UIPasteboard.general.string = token.token.currentPassword
-//                            isCopied = true
-//                        }
                 }
-                .onDelete(perform: deleteItem)
+                .onDelete(perform: viewModel.deleteItem)
             }
             .cornerRadius(20)
-        }
-    }
-    
-    func refresh() {
-        isLoading = true
-        withAnimation {
-            self.tokens = AppManager.shared.store.persistentTokens
-            isLoading = false
-        }
-    }
-    
-    private func deleteItem(at offsets: IndexSet) {
-        let itemsToDelete = offsets.map { tokens[$0] }
-        print(itemsToDelete)
-        itemsToDelete.forEach {
-            try? AppManager.shared.store.deletePersistentToken($0)
-            refresh()
         }
     }
 }

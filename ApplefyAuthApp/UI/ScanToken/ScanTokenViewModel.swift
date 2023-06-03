@@ -35,7 +35,11 @@ class ScanTokenViewModel: ObservableObject {
             .compactMap { [weak self] buffer in
                 let cgImage = CGImage.create(from: buffer)
                 if let self, self.isScanning, let cgImage {
+                    #if os(macOS)
                     let uiImage = UIImage(cgImage: cgImage, size: NSSize(width: 1000, height: 1000))
+                    #else
+                    let uiImage = UIImage(cgImage: cgImage)
+                    #endif
                     if let text = self.detectQRCode(uiImage) {
                         self.handleDecodedText(text)
                     }

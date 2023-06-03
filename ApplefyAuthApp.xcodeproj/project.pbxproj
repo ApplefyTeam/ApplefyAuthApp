@@ -12,6 +12,8 @@
 		BC1B5BA42A1F8FA3008F5FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1B5BA32A1F8FA3008F5FD4 /* Assets.xcassets */; };
 		BC1B5BA82A1F8FA3008F5FD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1B5BA72A1F8FA3008F5FD4 /* Preview Assets.xcassets */; };
 		BC4E8DC42A29E47400630DE6 /* NSImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DC32A29E47400630DE6 /* NSImage+Extension.swift */; };
+		BC4E8DC62A2B862800630DE6 /* AddTokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DC52A2B862800630DE6 /* AddTokenViewModel.swift */; };
+		BC4E8DC92A2B87FA00630DE6 /* ListOfTokensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DC82A2B87FA00630DE6 /* ListOfTokensViewModel.swift */; };
 		BC6538FE2A28F8030009BDE0 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6538FD2A28F8030009BDE0 /* AccountView.swift */; };
 		BC9F4D272A265D4700B71A90 /* qr_code_example.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9F4D262A265D4700B71A90 /* qr_code_example.png */; };
 		BC9F4D2A2A28A92900B71A90 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F4D292A28A92900B71A90 /* Demo.swift */; };
@@ -46,6 +48,8 @@
 		BC1B5BA52A1F8FA3008F5FD4 /* ApplefyAuthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ApplefyAuthApp.entitlements; sourceTree = "<group>"; };
 		BC1B5BA72A1F8FA3008F5FD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC4E8DC32A29E47400630DE6 /* NSImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extension.swift"; sourceTree = "<group>"; };
+		BC4E8DC52A2B862800630DE6 /* AddTokenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTokenViewModel.swift; sourceTree = "<group>"; };
+		BC4E8DC82A2B87FA00630DE6 /* ListOfTokensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfTokensViewModel.swift; sourceTree = "<group>"; };
 		BC6538FD2A28F8030009BDE0 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		BC9F4D262A265D4700B71A90 /* qr_code_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr_code_example.png; sourceTree = "<group>"; };
 		BC9F4D292A28A92900B71A90 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
@@ -121,6 +125,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BC4E8DC72A2B87EE00630DE6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BC6538FD2A28F8030009BDE0 /* AccountView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		BC6538FC2A28F2E20009BDE0 /* ScanToken */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,19 +181,10 @@
 		BCA1CCC52A1F909C00E7D606 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				BCA1CCC82A1F90D900E7D606 /* Extensions */,
 				BCA1CCC32A1F908F00E7D606 /* Generator.swift */,
 				BCA1CCC12A1F906500E7D606 /* Token.swift */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		BCA1CCC82A1F90D900E7D606 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				BCA1CCC62A1F90D200E7D606 /* Token+URL.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BCA1CCCF2A1F92BA00E7D606 /* Data store */ = {
@@ -209,8 +212,9 @@
 		BCA1CCD52A1FACB500E7D606 /* ListOfTokens */ = {
 			isa = PBXGroup;
 			children = (
+				BC4E8DC72A2B87EE00630DE6 /* Cell */,
 				BCA1CCD62A1FACC400E7D606 /* ListOfTokensView.swift */,
-				BC6538FD2A28F8030009BDE0 /* AccountView.swift */,
+				BC4E8DC82A2B87FA00630DE6 /* ListOfTokensViewModel.swift */,
 			);
 			path = ListOfTokens;
 			sourceTree = "<group>";
@@ -230,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				BCA1CCD82A1FADB100E7D606 /* AddTokenView.swift */,
+				BC4E8DC52A2B862800630DE6 /* AddTokenViewModel.swift */,
 			);
 			path = AddNewToken;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 		BCA1CCE42A1FB71400E7D606 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BCA1CCC62A1F90D200E7D606 /* Token+URL.swift */,
 				BCA1CCE52A1FB72000E7D606 /* CGImage+Extension.swift */,
 				BC9F4D592A28CF8800B71A90 /* View+Extension.swift */,
 				BC4E8DC32A29E47400630DE6 /* NSImage+Extension.swift */,
@@ -348,6 +354,7 @@
 				BC6538FE2A28F8030009BDE0 /* AccountView.swift in Sources */,
 				BCA1CCC72A1F90D200E7D606 /* Token+URL.swift in Sources */,
 				BCA1CCC42A1F908F00E7D606 /* Generator.swift in Sources */,
+				BC4E8DC62A2B862800630DE6 /* AddTokenViewModel.swift in Sources */,
 				BCA1CCDB2A1FAF2900E7D606 /* ScanTokenView.swift in Sources */,
 				BCA1CCD72A1FACC400E7D606 /* ListOfTokensView.swift in Sources */,
 				BCA1CCEF2A1FCBB900E7D606 /* AppManager.swift in Sources */,
@@ -357,6 +364,7 @@
 				BCA1CCE32A1FB3A400E7D606 /* ScanTokenViewModel.swift in Sources */,
 				BCA1CCBD2A1F902A00E7D606 /* Keychain.swift in Sources */,
 				BC9F4D5A2A28CF8800B71A90 /* View+Extension.swift in Sources */,
+				BC4E8DC92A2B87FA00630DE6 /* ListOfTokensViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

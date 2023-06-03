@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddTokenView: View {
+    @StateObject var viewModel: AddTokenViewModel = AddTokenViewModel()
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -23,7 +24,6 @@ struct AddTokenView: View {
                 NavBackButton(dismiss: self.dismiss)
             })
             #endif
-            
         }
     }
 }
