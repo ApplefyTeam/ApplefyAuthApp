@@ -25,10 +25,12 @@ extension CommandLine {
     }
 }
 
-struct DemoTokenStore: TokenStoreProtocol {
-    let persistentTokens = demoTokens.map(PersistentToken.init(demoToken:))
+class DemoTokenStore: TokenStoreProtocol {
+    var persistentTokens: [PersistentToken] {
+        demoTokens.map(PersistentToken.init(demoToken:))
+    }
 
-    private static let demoTokens = [
+    private var demoTokens = [
         Token(
             name: "john.appleseed@gmail.com",
             issuer: "Google",
@@ -55,25 +57,9 @@ struct DemoTokenStore: TokenStoreProtocol {
     ]
 
     private struct Error: Swift.Error {}
-
-    func addToken(_ token: Token) throws {
-        throw Error()
-    }
-
-    func saveToken(_ token: Token, toPersistentToken persistentToken: PersistentToken) throws {
-        throw Error()
-    }
-
-    func updatePersistentToken(_ persistentToken: PersistentToken) throws {
-        throw Error()
-    }
-
-    func moveTokenFromIndex(_ origin: Int, toIndex destination: Int) throws {
-        throw Error()
-    }
-
+    
     func deletePersistentToken(_ persistentToken: PersistentToken) throws {
-        throw Error()
+        demoTokens = demoTokens.filter({ $0.issuer != persistentToken.token.issuer }) // && $0.generator != token.token.generator })
     }
 }
 
@@ -124,5 +110,35 @@ extension UIImage {
     static func demoScannerImage() -> UIImage? {
         return UIImage(named: "qr_code_example")
     }
+    
+    static func demoWrongImage() -> UIImage? {
+        return UIImage(systemName: "apple.logo")
+    }
 }
 
+
+extension TokenStoreProtocol {
+    
+    func addToken(_ token: ApplefyAuthApp.Token) throws {
+        
+    }
+    
+    func saveToken(_ token: ApplefyAuthApp.Token, toPersistentToken persistentToken: ApplefyAuthApp.PersistentToken) throws {
+        
+    }
+    
+    func updatePersistentToken(_ persistentToken: ApplefyAuthApp.PersistentToken) throws {
+        
+    }
+    
+    func moveTokenFromIndex(_ origin: Int, toIndex destination: Int) throws {
+        
+    }
+    
+    func loadTokens() throws {
+        print("TokenStoreProtocol \(#function)")
+    }
+    
+    func deletePersistentToken(_ token: PersistentToken) throws {
+    }
+}

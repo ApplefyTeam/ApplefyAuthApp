@@ -11,13 +11,12 @@ import Combine
 class ListOfTokensViewModel: ObservableObject {
     
     @Published var isLoading: Bool = false
-    
     @Published var tokens: [PersistentToken] = []
-    @Published var isManualAdding: Bool = false
-    
     @Published var isCopied: Bool = false
+    private let tokenStore: TokenStoreProtocol!
     
-    init() {
+    init(tokenStore: TokenStoreProtocol = AppManager.shared.store) {
+        self.tokenStore = tokenStore
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(refresh),
                                                name: .refreshApplefyTokens,
@@ -29,10 +28,12 @@ class ListOfTokensViewModel: ObservableObject {
     }
     
     @objc
-    func refresh() {
+    @MainActor
+    func refresh() async throws {
         isLoading = true
+        try tokenStore.loadTokens()
         withAnimation {
-            tokens = AppManager.shared.store.persistentTokens
+            tokens = tokenStore.persistentTokens
             isLoading = false
         }
     }
@@ -40,8 +41,10 @@ class ListOfTokensViewModel: ObservableObject {
     func deleteItem(at offsets: IndexSet) {
         let itemsToDelete = offsets.map { tokens[$0] }
         itemsToDelete.forEach {
-            try? AppManager.shared.store.deletePersistentToken($0)
-            refresh()
+            try? tokenStore.deletePersistentToken($0)
+        }
+        Task {
+            try? await refresh()
         }
     }
 }

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Base32
 
 public extension Token {
     // MARK: Serialization

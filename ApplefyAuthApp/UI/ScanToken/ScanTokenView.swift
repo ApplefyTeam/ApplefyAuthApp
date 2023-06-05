@@ -52,6 +52,9 @@ struct ScanTokenView: View {
         .onAppear() {
             model.isScanning = true
         }
+        .onDisappear() {
+            model.isScanning = false
+        }
     }
     
     var content: some View {

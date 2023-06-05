@@ -13,6 +13,10 @@ struct ApplefyAuthAppApp: App {
         WindowGroup {
             NavigationStack {
                 ListOfTokensView()
+                #if os(macOS)
+//                    .frame(minWidth: 700, minHeight: 400)
+//                    .presentedWindowToolbarStyle(.expanded)
+                #endif
             }
         }
     }

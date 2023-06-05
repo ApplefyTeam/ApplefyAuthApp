@@ -30,13 +30,13 @@ struct ListOfTokensView: View {
         }
         .toolbar {
             HStack {
-                Button(action: viewModel.refresh, label: {
+                Button(action: refreshTokens, label: {
                     Image(systemName: "arrow.clockwise")
                         .tint(.black)
                 })
                 
-                Button(action: {
-                    viewModel.isManualAdding.toggle()
+                NavigationLink(destination: {
+                    AddTokenView()
                 }, label: {
                     Image(systemName: "plus")
                         .tint(.black)
@@ -50,13 +50,10 @@ struct ListOfTokensView: View {
                 })
             }
         }
-        .navigationDestination(isPresented: $viewModel.isManualAdding, destination: {
-            AddTokenView()
-        })
         .padding()
         .navigationTitle("Accounts List")
         .onAppear {
-            viewModel.refresh()
+            refreshTokens()
         }
         .alert(isPresented: $viewModel.isCopied) {
                     Alert(title: Text("Code copied!"),
@@ -84,6 +81,16 @@ struct ListOfTokensView: View {
                 .onDelete(perform: viewModel.deleteItem)
             }
             .cornerRadius(20)
+        }
+    }
+    
+    private func refreshTokens() {
+        Task {
+            do {
+                try await viewModel.refresh()
+            } catch {
+                print("Failed to refresh tokens \(error)")
+            }
         }
     }
 }

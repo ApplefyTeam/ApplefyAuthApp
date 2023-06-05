@@ -24,9 +24,11 @@ class ScanTokenViewModel: ObservableObject {
     @Published var isScanning: Bool = false
     @Published var tokenFound: Bool = false
     
-    private let appManager = AppManager.shared
+    private let appManager: AppManager = AppManager.shared
+    private let tokenStore: TokenStoreProtocol!
     
-    init() {
+    init(tokenStore: TokenStoreProtocol = AppManager.shared.store) {
+        self.tokenStore = tokenStore
         setupSubscriptions()
     }
     
@@ -90,7 +92,7 @@ class ScanTokenViewModel: ObservableObject {
                 return
             }
             do {
-                try appManager.store.addToken(token)
+                try tokenStore.addToken(token)
                 scannedToken = token
                 tokenFound = true
                 isScanning = true

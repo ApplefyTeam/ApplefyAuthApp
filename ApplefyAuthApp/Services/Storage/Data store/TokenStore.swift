@@ -15,18 +15,24 @@ protocol TokenStoreProtocol {
     func updatePersistentToken(_ persistentToken: PersistentToken) throws
     func moveTokenFromIndex(_ origin: Int, toIndex destination: Int) throws
     func deletePersistentToken(_ persistentToken: PersistentToken) throws
+    func loadTokens() throws
 }
 
 class KeychainTokenStore: TokenStoreProtocol {
     private let keychain: Keychain
     private let userDefaults: UserDefaults
-    @Published private(set) var persistentTokens: [PersistentToken]
+    @Published private(set) var persistentTokens: [PersistentToken] = []
 
     // Throws an error if the initial state could not be loaded from the keychain.
     init(keychain: Keychain, userDefaults: UserDefaults) throws {
         self.keychain = keychain
         self.userDefaults = userDefaults
 
+        try loadTokens()
+    }
+    
+    func loadTokens() throws {
+        print("KeychainTokenStore \(#function)")
         // Try to load persistent tokens.
         let persistentTokenSet = try keychain.allPersistentTokens()
         let sortedIdentifiers = userDefaults.persistentIdentifiers()
