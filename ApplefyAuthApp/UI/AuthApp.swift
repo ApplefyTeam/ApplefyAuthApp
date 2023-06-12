@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct ApplefyAuthAppApp: App {
+struct AuthApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
