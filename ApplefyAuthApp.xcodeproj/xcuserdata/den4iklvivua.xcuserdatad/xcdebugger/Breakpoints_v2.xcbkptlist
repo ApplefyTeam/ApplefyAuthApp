@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AFD87A75-5B77-46B1-AFBC-109B256C3566"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ApplefyAuthApp/Services/Storage/Keychain.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
-            landmarkName = "allKeychainItems()"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "AFD87A75-5B77-46B1-AFBC-109B256C3566 - 7e9203b37f470e09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ApplefyAuthApp.allKeychainItems() throws -&gt; Swift.Array&lt;__C.NSDictionary&gt;"
-                  moduleName = "ApplefyAuthApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/den4iklvivua/Desktop/projects/ApplefyAuthApp/ApplefyAuthApp/Services/Storage/Keychain.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "227"
-                  endingLineNumber = "227"
-                  offsetFromSymbolStart = "1124">
-               </Location>
-               <Location
-                  uuid = "AFD87A75-5B77-46B1-AFBC-109B256C3566 - a0de3a3b9cd7702f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.UnsafeMutablePointer&lt;Swift.Optional&lt;Swift.AnyObject&gt;&gt;) -&gt; Swift.Int32 in ApplefyAuthApp.allKeychainItems() throws -&gt; Swift.Array&lt;__C.NSDictionary&gt;"
-                  moduleName = "ApplefyAuthApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/den4iklvivua/Desktop/projects/ApplefyAuthApp/ApplefyAuthApp/Services/Storage/Keychain.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "228"
-                  endingLineNumber = "228"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DA852AC7-197F-4DA2-A61B-1996C5E8D96A"
             shouldBeEnabled = "No"
             ignoreCount = "0"

@@ -16,7 +16,7 @@
 		BC4E8DCB2A2B8EEC00630DE6 /* NSNotifications+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DCA2A2B8EEC00630DE6 /* NSNotifications+Extension.swift */; };
 		BC4E8DCD2A2DDE4800630DE6 /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DCC2A2DDE4800630DE6 /* Base32.swift */; };
 		BC4E8DCF2A2DDE7900630DE6 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DCE2A2DDE7900630DE6 /* String+Extension.swift */; };
-		BC4E8DD72A2DDF0E00630DE6 /* ApplefyAuthAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DD62A2DDF0E00630DE6 /* ApplefyAuthAppTests.swift */; };
+		BC4E8DD72A2DDF0E00630DE6 /* AuthAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DD62A2DDF0E00630DE6 /* AuthAppTests.swift */; };
 		BC4E8DDE2A2DDF2C00630DE6 /* ListOfTokensViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E8DDD2A2DDF2C00630DE6 /* ListOfTokensViewModelTests.swift */; };
 		BC6538FE2A28F8030009BDE0 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6538FD2A28F8030009BDE0 /* AccountView.swift */; };
 		BC9F4D272A265D4700B71A90 /* qr_code_example.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9F4D262A265D4700B71A90 /* qr_code_example.png */; };
@@ -67,7 +67,7 @@
 		BC4E8DCC2A2DDE4800630DE6 /* Base32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base32.swift; sourceTree = "<group>"; };
 		BC4E8DCE2A2DDE7900630DE6 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		BC4E8DD42A2DDF0E00630DE6 /* ApplefyAuthAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplefyAuthAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC4E8DD62A2DDF0E00630DE6 /* ApplefyAuthAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplefyAuthAppTests.swift; sourceTree = "<group>"; };
+		BC4E8DD62A2DDF0E00630DE6 /* AuthAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAppTests.swift; sourceTree = "<group>"; };
 		BC4E8DDD2A2DDF2C00630DE6 /* ListOfTokensViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfTokensViewModelTests.swift; sourceTree = "<group>"; };
 		BC6538FD2A28F8030009BDE0 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		BC9F4D262A265D4700B71A90 /* qr_code_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr_code_example.png; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 			children = (
 				BCAB8C5E2A2E1EF70024D93A /* Mocks */,
 				BCAB8C5D2A2E1E540024D93A /* ViewModels */,
-				BC4E8DD62A2DDF0E00630DE6 /* ApplefyAuthAppTests.swift */,
+				BC4E8DD62A2DDF0E00630DE6 /* AuthAppTests.swift */,
 			);
 			path = ApplefyAuthAppTests;
 			sourceTree = "<group>";
@@ -458,7 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4E8DDE2A2DDF2C00630DE6 /* ListOfTokensViewModelTests.swift in Sources */,
-				BC4E8DD72A2DDF0E00630DE6 /* ApplefyAuthAppTests.swift in Sources */,
+				BC4E8DD72A2DDF0E00630DE6 /* AuthAppTests.swift in Sources */,
 				BCAB8C582A2E17D60024D93A /* ScanViewModelTests.swift in Sources */,
 				BCAB8C5C2A2E1A500024D93A /* MockTokenStore.swift in Sources */,
 			);
