@@ -35,12 +35,12 @@ struct ListOfTokensView: View {
                         .tint(.black)
                 })
                 
-                NavigationLink(destination: {
-                    AddTokenView()
-                }, label: {
-                    Image(systemName: "plus")
-                        .tint(.black)
-                })
+//                NavigationLink(destination: {
+//                    AddTokenView()
+//                }, label: {
+//                    Image(systemName: "plus")
+//                        .tint(.black)
+//                })
                 
                 NavigationLink(destination: {
                     ScanTokenView()

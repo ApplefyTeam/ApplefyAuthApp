@@ -14,17 +14,19 @@ class ListOfTokensViewModel: ObservableObject {
     @Published var tokens: [PersistentToken] = []
     @Published var isCopied: Bool = false
     private let tokenStore: TokenStoreProtocol!
+    var observer: NSObjectProtocol?
     
     init(tokenStore: TokenStoreProtocol = AppManager.shared.store) {
         self.tokenStore = tokenStore
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(refresh),
-                                               name: .refreshApplefyTokens,
-                                               object: nil)
+        self.observer = NotificationCenter.default.addObserver(forName: .refreshApplefyTokens,
+                                                               object: nil, queue: nil,
+                                                               using: { _ in })
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        if let observer = observer {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
     
     @objc

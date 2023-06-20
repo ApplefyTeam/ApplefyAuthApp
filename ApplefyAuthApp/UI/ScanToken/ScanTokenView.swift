@@ -22,15 +22,20 @@ struct ScanTokenView: View {
                 VStack {
                     Text("Token scanned successfully!")
                         .bold()
-                        .padding()
+                        .padding(.all, 5)
                     
                     Button(action: {
                         NotificationCenter.default.post(name: .refreshApplefyTokens, object: nil)
                         dismiss()
                     }, label: {
-                        Text("OK!").bold()
+                        Text("OK")
+                            .foregroundColor(.black)
+                            .bold()
+                            .padding(.all, 5)
                     })
-                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .padding(.all, 2)
                 }
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(15)

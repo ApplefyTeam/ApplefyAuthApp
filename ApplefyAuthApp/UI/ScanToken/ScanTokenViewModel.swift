@@ -76,7 +76,7 @@ class ScanTokenViewModel: ObservableObject {
     private let minimumScanInterval: TimeInterval = 1
     
     func handleDecodedText(_ text: String) {
-        guard isScanning else {
+        guard isScanning, !tokenFound else {
             return
         }
         isScanning = false
@@ -86,22 +86,29 @@ class ScanTokenViewModel: ObservableObject {
             guard let url = URL(string: text),
                   let token = try? Token(url: url) else {
                 // Show an error message
-                tokenFound = false
-                scannedToken = nil
-                isScanning = true
+                setToken(token: nil)
                 return
             }
             do {
                 try tokenStore.addToken(token)
-                scannedToken = token
-                tokenFound = true
-                isScanning = true
-                return
+                setToken(token: token)
             } catch {
-                scannedToken = nil
-                tokenFound = false
-                isScanning = true
-                return
+                setToken(token: nil)
+            }
+        }
+    }
+    
+    private func setToken(token: Token?) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            if let token = token {
+                self.isScanning = false
+                self.scannedToken = token
+                self.tokenFound = true
+            } else {
+                self.scannedToken = nil
+                self.tokenFound = false
+                self.isScanning = true
             }
         }
     }
